@@ -105,6 +105,8 @@ class HeartAPI(Resource):
         ,userMedDetailsJSON['angina'], userMedDetailsJSON['chestpain'], userMedDetailsJSON['restecg'], userMedDetailsJSON['oldpeak'], userMedDetailsJSON['mjrvessel'],
         userMedDetailsJSON['thalas'], userMedDetailsJSON['restbp'], userMedDetailsJSON['slope'])
 
+
+        print('returning from final prediction function')
         return final_prediction
         
 
