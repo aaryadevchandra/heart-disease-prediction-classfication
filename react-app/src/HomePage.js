@@ -26,14 +26,12 @@ const HomePageComponent = () => {
     }
 
     const userMedDetailsJSONString = JSON.stringify(userMedDetailsJSON);
-
     const userMedDetailsJSONStringB64 = btoa(userMedDetailsJSONString);
 
-
-
-
-    await axios.post(`http://127.0.0.1:5000/heartapi/${userMedDetailsJSONStringB64}`)
+    let response = await axios.post(`http://127.0.0.1:5000/heartapi/${userMedDetailsJSONStringB64}`)
     .catch(err=>console.log(err))
+
+    console.log('response is ' + response);
   }
 
   return (

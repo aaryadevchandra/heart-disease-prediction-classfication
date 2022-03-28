@@ -99,9 +99,11 @@ class HeartAPI(Resource):
         print(userMedDetailsJSON)
 
         # calling the model predict function and passing our received params
-        predict(userMedDetailsJSON['age'], userMedDetailsJSON['sex'], userMedDetailsJSON['maxhrtrate'], userMedDetailsJSON['chol'], userMedDetailsJSON['fstbloodsugar']
+        final_prediction = predict(userMedDetailsJSON['age'], userMedDetailsJSON['sex'], userMedDetailsJSON['maxhrtrate'], userMedDetailsJSON['chol'], userMedDetailsJSON['fstbloodsugar']
         ,userMedDetailsJSON['angina'], userMedDetailsJSON['chestpain'], userMedDetailsJSON['restecg'], userMedDetailsJSON['oldpeak'], userMedDetailsJSON['mjrvessel'],
         userMedDetailsJSON['thalas'], userMedDetailsJSON['restbp'], userMedDetailsJSON['slope'])
+
+        return final_prediction
         
 
 api.add_resource(HeartAPI, "/heartapi/<string:userMedDetailsJSONStringB64>")
