@@ -3,8 +3,13 @@ import './App.css';
 // import TopBarComponent from './TopBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import ResultsComponent from './ResultsBar';
+import { useState } from 'react';
+
 
 const HomePageComponent = () => {
+
+    let [resultsbar, setResultsBar] = useState(<></>);
 
   const sendData = async (age, sex, maxhrtrate, chol, fstbloodsugar, angina, chestpain, restecg, oldpeak, mjrvessel, thalas, restbp, slope ) => {
 
@@ -28,8 +33,15 @@ const HomePageComponent = () => {
     const userMedDetailsJSONString = JSON.stringify(userMedDetailsJSON);
     const userMedDetailsJSONStringB64 = btoa(userMedDetailsJSONString);
 
-    let response = await axios.post(`http://127.0.0.1:5000/heartapi/${userMedDetailsJSONStringB64}`)
-    .catch(err=>console.log(err)).then(response=>console.log(response));
+    await axios.post(`http://127.0.0.1:5000/heartapi/${userMedDetailsJSONStringB64}`).then((response)=>{
+        if(response.data === 1){
+            console.log('response came 1');
+            setResultsBar(resultsbar = <ResultsComponent prediction_text={'High Probability of Heart Disease'}/>)
+        }else if(response.data === 0){
+            console.log('response came 0');
+            setResultsBar(resultsbar = <ResultsComponent prediction_text={'Low Probability of Heart Disease'}/>)
+        }
+    });
 
   }
 
@@ -220,6 +232,13 @@ const HomePageComponent = () => {
                 
             </div>
         </div>
+
+
+        {/* results bar component */}
+
+        {resultsbar}
+
+
     </>
   );
 
