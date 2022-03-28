@@ -1,0 +1,82 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+@font-face {
+  font-family: "Lexend Deca";
+  src: url(./fonts/LexendDeca-ExtraLight.ttf);
+}
+
+* {
+  font-family: "Lexend Deca";
+}
+
+
+.rectangle{
+  height: 50px;
+  width: auto;
+  background-color: aqua;
+
+}
+
+.red-color{
+  color: #f1356d !important;
+}
+
+@keyframes submit-hover-animation{
+  0%   {background-color: #ffffff;}
+  10%  {background-color: #ffebee;}
+  20%  {background-color: #ffd7dc;}
+  30%  {background-color: #ffc3cc;}
+  40% {background-color: #ffafbb;}
+  50% {background-color: #ff9aab;}
+  60% {background-color: #fe859b;}
+  70% {background-color: #fb6e8b;}
+  80% {background-color: #f6557c;}
+  90% {background-color: #f1356d;}
+  100% {background-color: #f1356d;}
+}
+
+.submit-hover-animation:hover{
+  color: white !important;
+  animation: submit-hover-animation 0.3s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+
+}
