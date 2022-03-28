@@ -87,8 +87,10 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
 
     # if more ones than zeros, return 1, else vice versa
     if final_pre_dict['one'] > final_pre_dict['zero']:
+        print('High probability of heart disease')
         return 1
     else:
+        print('Low to no probability of heart disease')
         return 0
 
 
