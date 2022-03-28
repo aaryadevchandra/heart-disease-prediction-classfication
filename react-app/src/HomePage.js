@@ -29,9 +29,8 @@ const HomePageComponent = () => {
     const userMedDetailsJSONStringB64 = btoa(userMedDetailsJSONString);
 
     let response = await axios.post(`http://127.0.0.1:5000/heartapi/${userMedDetailsJSONStringB64}`)
-    .catch(err=>console.log(err))
+    .catch(err=>console.log(err)).then(response=>console.log(response));
 
-    console.log('response is ' + response);
   }
 
   return (
@@ -174,7 +173,6 @@ const HomePageComponent = () => {
                                 <label style={{marginBottom: '10px'}}>Thalassemia</label>
                                 {/* <input id='' className='form-control shadow input-shadow br-zero'></input> */}
                                 <select id='thalas-id' class="form-control shadow input-shadow br-zero">
-                                    <option>Null</option>
                                     <option>Defect exists, can't be fixed</option>
                                     <option>Normal blood flow</option>
                                     <option>Defect exists, can be fixed</option>      
