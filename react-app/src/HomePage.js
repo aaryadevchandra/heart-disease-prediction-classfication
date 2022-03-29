@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import ResultsComponent from './ResultsBar';
 import { useState } from 'react';
+import logo from '../src/logo.png';
 
 
 const HomePageComponent = () => {
@@ -47,13 +48,19 @@ const HomePageComponent = () => {
 
   return (
     <>
+
+        <nav class="navbar navbar-light">
+            <div className="container" style={{textAlign:"center", marginTop:"4vh"}}>
+                <img src={logo} alt="" style={{margin: "auto", display: "block"}}/>
+            </div>
+        </nav>
     {/* <TopBarComponent /> */}
-      <div className='container-fluid' style={{marginTop: '17vh', marginBottom: '7vh', marginLeft: '5vw', marginRight: '5vw'}}>
+      <div className='container-fluid' style={{marginTop: '0vh', marginBottom: '7vh', marginLeft: '5vw', marginRight: '5vw'}}>
             <div className='row bold-font reg-font'>
                 
                 <div className='col text-start' style={{marginRight: '10vw'}}>
                     <div className='row'>
-                        <div className='col' style={{ fontSize: '150%'}}>
+                        <div className='col' style={{ fontSize: '150%', fontWeight:'bolder'}}>
                             <p className='red-color'>ADD YOUR DETAILS</p>
                         </div>
                     </div>
