@@ -215,7 +215,7 @@ const HomePageComponent = () => {
                                     {/* <input id='rsvp-form-first-name' className='form-control shadow input-shadow br-zero'></input> */}
                                     <select id='slope-id' class="form-control shadow input-shadow br-zero">
                                       <option>0</option>
-                                      <option>2</option>
+                                      <option>1</option>
                                       <option>2</option>
                                 </select>
                                 </div>
