@@ -7,7 +7,7 @@ const ResultsComponent = (props) => {
         <>
         <div className='container'>
             <div className='row text-center'>
-                <div className='col'>
+                <div className='col red-color' style={{padding: "0px 0px 100px 0px", fontWeight: "bold", fontSize: "150%"}}>
                     {props.prediction_text}
                 </div>
             </div>

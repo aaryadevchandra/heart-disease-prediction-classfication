@@ -19,8 +19,7 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
     else:
         fbs = 0
 
-    
-    if sex == 'Female': 
+    if sex == 'Female':
         sex = 0
 
     elif sex == 'Male':
@@ -32,7 +31,6 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
     elif exng == 'No':
         exng = 0
 
-    
     if thall == 'Normal blood flow':
         thall = 2
 
@@ -41,36 +39,34 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
 
     elif thall == "Defect exists, can be fixed":
         thall = 3
-    
 
-
-
-    variables = ["age","sex","cp","trtbps","chol","fbs","restecg","thalachh","exng","oldpeak","slp","caa","thall"]
-    new = pd.DataFrame(columns = variables)
-    new.loc[0] = [float(age)/77, float(sex), float(cp), float(trtbps)/200, float(chol)/564 , float(fbs), float(restecg), float(thalachh)/202, float(exng), float(oldpeak), float(slp), float(caa), float(thall)]
+    variables = ["age", "sex", "cp", "trtbps", "chol", "fbs",
+                 "restecg", "thalachh", "exng", "oldpeak", "slp", "caa", "thall"]
+    new = pd.DataFrame(columns=variables)
+    new.loc[0] = [float(age)/77, float(sex), float(cp), float(trtbps)/200, float(chol)/564, float(fbs), float(
+        restecg), float(thalachh)/202, float(exng), float(oldpeak), float(slp), float(caa), float(thall)]
     # New is a dataframe with 13 values
-    
+
     # running logistic regression model
-    with open("LogiReg.pkl","rb") as fp:
+    with open("LogiReg.pkl", "rb") as fp:
         logi_regression_model = pickle.load(fp)
-    
+
     # get logistic regression ans
     logi_regression_ans = logi_regression_model.predict(new)
 
     # running svm model
-    with open("svm_model.pkl","rb") as fp:
+    with open("svm_model.pkl", "rb") as fp:
         svm_model = pickle.load(fp)
-    
+
     # get svm ans
     svm_ans = svm_model.predict(new)
 
     # running random forest model
-    with open("random_forest_model.pkl","rb") as fp:
+    with open("random_forest_model.pkl", "rb") as fp:
         random_forest_model = pickle.load(fp)
-    
+
     # get random forest ans
     random_forest_ans = random_forest_model.predict(new)
-
 
     # creating a dictionary with one and zero as the keys
     # the key with the maximum value will be our final outcome/output/result of our prediction
@@ -78,7 +74,7 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
 
     # for each ans that we received, if the respective model ans == 1, add ++1 to value of key -> 'one'
     # if model ans == 0, add ++1 to value of key -> 'zero'
-    # basically finding how many ones or zeros we got 
+    # basically finding how many ones or zeros we got
     for model_ans in [logi_regression_ans[0], svm_ans[0], random_forest_ans[0]]:
         if model_ans == 1:
             final_pre_dict['one'] += 1
@@ -87,28 +83,28 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
 
     # if more ones than zeros, return 1, else vice versa
     if final_pre_dict['one'] > final_pre_dict['zero']:
+        print('Low to no probability of heart disease')
+
+        return 0
+    else:
         print('High probability of heart disease')
         return 1
-    else:
-        print('Low to no probability of heart disease')
-        return 0
 
 
 class HeartAPI(Resource):
     def post(self, userMedDetailsJSONStringB64):
-        userMedDetailsJSONString = base64.b64decode(userMedDetailsJSONStringB64.encode('ascii')).decode('ascii')
+        userMedDetailsJSONString = base64.b64decode(
+            userMedDetailsJSONStringB64.encode('ascii')).decode('ascii')
         userMedDetailsJSON = json.loads(userMedDetailsJSONString)
         print(userMedDetailsJSON)
 
         # calling the model predict function and passing our received params
-        final_prediction = predict(userMedDetailsJSON['age'], userMedDetailsJSON['sex'], userMedDetailsJSON['maxhrtrate'], userMedDetailsJSON['chol'], userMedDetailsJSON['fstbloodsugar']
-        ,userMedDetailsJSON['angina'], userMedDetailsJSON['chestpain'], userMedDetailsJSON['restecg'], userMedDetailsJSON['oldpeak'], userMedDetailsJSON['mjrvessel'],
-        userMedDetailsJSON['thalas'], userMedDetailsJSON['restbp'], userMedDetailsJSON['slope'])
-
+        final_prediction = predict(userMedDetailsJSON['age'], userMedDetailsJSON['sex'], userMedDetailsJSON['maxhrtrate'], userMedDetailsJSON['chol'], userMedDetailsJSON['fstbloodsugar'], userMedDetailsJSON['angina'], userMedDetailsJSON['chestpain'], userMedDetailsJSON['restecg'], userMedDetailsJSON['oldpeak'], userMedDetailsJSON['mjrvessel'],
+                                   userMedDetailsJSON['thalas'], userMedDetailsJSON['restbp'], userMedDetailsJSON['slope'])
 
         print('returning from final prediction function')
         return final_prediction
-        
+
 
 api.add_resource(HeartAPI, "/heartapi/<string:userMedDetailsJSONStringB64>")
 
