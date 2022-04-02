@@ -88,11 +88,11 @@ Our Web application consisted of a ReactJS frontend with a Flask backend. We tak
 
 ### Built With
 
-* [React.js](https://reactjs.org/)
-* [Bootstrap](https://getbootstrap.com)
-* [NodeJS](https://nodejs.com)
-* [Flask](https://flask.palletsprojects.com/en/2.1.x/)
-* [Sklearn](https://scikit-learn.org/stable/)
+* ![React.js](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png)
+* ![Bootstrap](https://getbootstrap.com)
+* ![NodeJS](https://nodejs.com)
+* ![Flask](https://flask.palletsprojects.com/en/2.1.x/)
+* ![Sklearn](https://scikit-learn.org/stable/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
