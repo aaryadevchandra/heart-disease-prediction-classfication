@@ -41,9 +41,12 @@ const HomePageComponent = () => {
         }else if(response.data === 0){
             console.log('response came 0');
             setResultsBar(resultsbar = <ResultsComponent prediction_text={'Low Probability of Heart Disease'}/>)
+        }else{
+            console.log('Returned data is not ideal');
+            setResultsBar(resultsbar = <ResultsComponent prediction_text={response.data} />);
         }
-    });
-
+    }).catch(err => setResultsBar(resultsbar = <ResultsComponent id='prediction_text_id' prediction_text={'Error connecting to backend...please try again later'} />));
+    // document.getElementById( 'prediction_text_id' ).scrollIntoView();
   }
 
   return (
@@ -225,12 +228,26 @@ const HomePageComponent = () => {
 
                     <div className='row text-center'>
                         <button className='btn shadow red-color submit-hover-animation' style={{backgroundColor: 'white', height: '50px', borderRadius: '5px', marginTop: '4vh'}} 
-                        onClick={() => sendData(document.getElementById('age-id').value, document.getElementById('sex-id').value, document.getElementById('maxhrtrate-id').value,
-                        document.getElementById('chol-id').value,document.getElementById('fstbloodsugar-id').value,document.getElementById('angina-id').value,
-                        document.getElementById('chestpain-id').value
-                        ,document.getElementById('restecg-id').value,document.getElementById('oldpeak-id').value,document.getElementById('mjrvessel-id').value,
-                        document.getElementById('thalas-id').value,
-                        document.getElementById('restbp-id').value,document.getElementById('slope-id').value)}>
+                        onClick={() => {
+                            
+                            //checking if all values have been filled in 
+                            if (document.getElementById('age-id').value !== '' && document.getElementById('sex-id').value !== '' && document.getElementById('maxhrtrate-id').value !== ''
+                        && document.getElementById('chol-id').value !== '' && document.getElementById('fstbloodsugar-id').value !== '' && 
+                        document.getElementById('angina-id').value !== '' && document.getElementById('chestpain-id').value !== '' &&
+                        document.getElementById('restecg-id').value !== '' && document.getElementById('oldpeak-id').value !== '' &&
+                        document.getElementById('mjrvessel-id').value !== '' && document.getElementById('thalas-id').value !== '' &&
+                        document.getElementById('restbp-id').value !== '' && document.getElementById('slope-id').value !== ''){
+                            sendData(document.getElementById('age-id').value, document.getElementById('sex-id').value, document.getElementById('maxhrtrate-id').value,
+                            document.getElementById('chol-id').value,document.getElementById('fstbloodsugar-id').value,document.getElementById('angina-id').value,
+                            document.getElementById('chestpain-id').value
+                            ,document.getElementById('restecg-id').value,document.getElementById('oldpeak-id').value,document.getElementById('mjrvessel-id').value,
+                            document.getElementById('thalas-id').value,
+                            document.getElementById('restbp-id').value,document.getElementById('slope-id').value)
+                        } else {
+                            alert('Please fill in all fields appropriately')
+                        }                        
+                        
+                        }}>
                             Submit
                         </button>
                     </div>
