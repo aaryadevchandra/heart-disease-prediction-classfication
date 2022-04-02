@@ -158,7 +158,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Aaryadev Chandra - [@Aaryadev](https://www.linkedin.com/in/aaryadevchandra/) - aaryadevc@gmail.com 
 
-Dev Chandan - [@DevChandan](https://www.linkedin.com/in/dev-chandan/)
+Dev Chandan - [@DevChandan](https://www.linkedin.com/in/dev-chandan/) - dev02chandan@gmail.com
 
 Project Link: [https://github.com/AaryadevChandra/heart-disease-prediction-classification](https://github.com/AaryadevChandra/heart-disease-prediction-classfication)
 
