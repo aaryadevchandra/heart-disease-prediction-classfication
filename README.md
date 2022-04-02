@@ -14,7 +14,7 @@
 
 
 <!-- PROJECT LOGO -->
-<br />
+<!-- <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="https://imgur.com/UNOxdW7" alt="Logo" width="80" height="80">
@@ -34,7 +34,7 @@
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
-</div>
+</div> -->
 
 
 
