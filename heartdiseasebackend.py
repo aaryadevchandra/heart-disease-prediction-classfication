@@ -1,4 +1,3 @@
-from typing import final
 from flask import Flask
 from flask_restful import Api, Resource
 import pickle
@@ -43,8 +42,11 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
     variables = ["age", "sex", "cp", "trtbps", "chol", "fbs",
                  "restecg", "thalachh", "exng", "oldpeak", "slp", "caa", "thall"]
     new = pd.DataFrame(columns=variables)
-    new.loc[0] = [float(age)/77, float(sex), float(cp), float(trtbps)/200, float(chol)/564, float(fbs), float(
-        restecg), float(thalachh)/202, float(exng), float(oldpeak), float(slp), float(caa), float(thall)]
+    try:
+        new.loc[0] = [float(age)/77, float(sex), float(cp), float(trtbps)/200, float(chol)/564, float(fbs), float(
+            restecg), float(thalachh)/202, float(exng), float(oldpeak), float(slp), float(caa), float(thall)]
+    except:
+        return {'Error': 'Issues in data'}
     # New is a dataframe with 13 values
 
     # running logistic regression model
