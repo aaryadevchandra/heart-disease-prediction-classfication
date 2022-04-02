@@ -65,8 +65,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Logo](https://imgur.com/UNOxdW7.png)
-
+<p align="center">
+  <img src="https://imgur.com/UNOxdW7.png" />
+</p>
 
 This project is part of our College Semester IV machine learning project. The main machine learning code was written on [Google Colab](https://colab.research.google.com/drive/1splSxv4lArjGC1WXJCuVhGfMKn-HQBZ4?authuser=1#scrollTo=znFNntxszpUw&uniqifier=1). The prediction is based on the [Heart Disease prediction dataset on Kaggle](https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset)
 
