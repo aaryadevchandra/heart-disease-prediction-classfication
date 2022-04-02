@@ -88,7 +88,11 @@ Our Web application consisted of a ReactJS frontend with a Flask backend. We tak
 
 ### Built With
 
-![React.js](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg)
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="100" height="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" width="100" height="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png" width="100" height="60">
+<img src="https://cdn.freebiesupply.com/logos/large/2x/flask-logo-png-transparent.png" width="100" height="100">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="100" height="100">
 * ![Bootstrap](https://getbootstrap.com)
 * ![NodeJS](https://nodejs.com)
 * ![Flask](https://flask.palletsprojects.com/en/2.1.x/)
