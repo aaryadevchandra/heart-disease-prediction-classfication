@@ -122,7 +122,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Once you have downloaded the repository and have entered te root directory, you are all set to go!
+Once you have downloaded the repository and have entered the root directory, you are all set to go!
 
 We'll first proceed by running the backend.
 
