@@ -50,21 +50,21 @@ def predict(age, sex, thalachh,  chol, fbs, exng, cp, restecg, oldpeak, caa, tha
     # New is a dataframe with 13 values
 
     # running logistic regression model
-    with open("LogiReg.pkl", "rb") as fp:
+    with open("../MLmodels/LogiReg.pkl", "rb") as fp:
         logi_regression_model = pickle.load(fp)
 
     # get logistic regression ans
     logi_regression_ans = logi_regression_model.predict(new)
 
     # running svm model
-    with open("svm_model.pkl", "rb") as fp:
+    with open("../MLmodels/svm_model.pkl", "rb") as fp:
         svm_model = pickle.load(fp)
 
     # get svm ans
     svm_ans = svm_model.predict(new)
 
     # running random forest model
-    with open("random_forest_model.pkl", "rb") as fp:
+    with open("../MLmodels/random_forest_model.pkl", "rb") as fp:
         random_forest_model = pickle.load(fp)
 
     # get random forest ans
