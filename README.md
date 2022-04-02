@@ -69,13 +69,18 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://imgur.com/a/Zza9AWo)
 
-This project is part of our College Semester IV machine learning project. The main machine learning code was written on [Google Colab](https://colab.research.google.com/drive/1splSxv4lArjGC1WXJCuVhGfMKn-HQBZ4?authuser=1#scrollTo=znFNntxszpUw&uniqifier=1). The prediction is based on the [heart.csv dataset on Kaggle](https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset)
+This project is part of our College Semester IV machine learning project. The main machine learning code was written on [Google Colab](https://colab.research.google.com/drive/1splSxv4lArjGC1WXJCuVhGfMKn-HQBZ4?authuser=1#scrollTo=znFNntxszpUw&uniqifier=1). The prediction is based on the [Heart Disease prediction dataset on Kaggle](https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset)
 
 On acquiring the dataset, three different kinds of classification algorithms were applied to it to figure which algorithm would perform the best. The three classification algorithms we proceeded with were the following:
 
 * [Logistic Regression](https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc)
 * [Support Vectorm Machine](https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm)
 * [Random Forest Classifier](https://www.javatpoint.com/machine-learning-random-forest-algorithm)
+
+The [Google Colab Notebook](https://colab.research.google.com/drive/1splSxv4lArjGC1WXJCuVhGfMKn-HQBZ4?authuser=1#scrollTo=znFNntxszpUw&uniqifier=1) contains a menu-drivev program to choose the ML algorithm a user might want to choose. Furthermore, we have made a simple web app out of the project by saving our models; which make us able to use them outside of our Google Colab notebook. This was achieved by using [Pickle](https://practicaldatascience.co.uk/machine-learning/how-to-save-and-load-machine-learning-models-using-pickle). 
+
+Our Web application consisted of a ReactJS frontend with a Flask backend. We take our feature input from the frontend, send it to our backend, do our prediction in the Python backend using the saved `.pkl` models, and return the predicted results back to the frontend to be displayed.
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -86,6 +91,8 @@ On acquiring the dataset, three different kinds of classification algorithms wer
 * [React.js](https://reactjs.org/)
 * [Bootstrap](https://getbootstrap.com)
 * [NodeJS](https://nodejs.com)
+* [Flask](https://flask.palletsprojects.com/en/2.1.x/)
+* [Sklearn](https://scikit-learn.org/stable/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
