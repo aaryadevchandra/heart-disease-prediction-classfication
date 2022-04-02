@@ -69,16 +69,19 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://imgur.com/a/Zza9AWo)
 
-This project is part of our College Semester IV machine learning project. The main machine learning code was written on [Google Colab](https://colab.research.google.com/drive/1splSxv4lArjGC1WXJCuVhGfMKn-HQBZ4?authuser=1#scrollTo=znFNntxszpUw&uniqifier=1). 
+This project is part of our College Semester IV machine learning project. The main machine learning code was written on [Google Colab](https://colab.research.google.com/drive/1splSxv4lArjGC1WXJCuVhGfMKn-HQBZ4?authuser=1#scrollTo=znFNntxszpUw&uniqifier=1). The prediction is based on the [heart.csv dataset on Kaggle](https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset)
+
+On acquiring the dataset, three different kinds of classification algorithms were applied to it to figure which algorithm would perform the best. The three classification algorithms we proceeded with were the following:
+
+* [Logistic Regression](https://towardsdatascience.com/logistic-regression-detailed-overview-46c4da4303bc)
+* [Support Vectorm Machine](https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm)
+* [Random Forest Classifier](https://www.javatpoint.com/machine-learning-random-forest-algorithm)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
 ### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
 
 * [React.js](https://reactjs.org/)
 * [Bootstrap](https://getbootstrap.com)
@@ -128,7 +131,7 @@ We'll first proceed by running the backend.
     ```sh 
     npm start
     ```
-    Make sure you already have run ```sh npm install ``` in the `/react-app` directory.
+    Make sure you already have run ```npm install ``` in a terminal in the `/react-app` directory.
     
    
 
@@ -153,11 +156,5 @@ Aaryadev Chandra - [@Aaryadevv](https://twitter.com/Aaryadevv) - aaryadevc@gmail
 Dev Chandan - 
 
 Project Link: [https://github.com/AaryadevChandra/heart-disease-prediction-classification](https://github.com/AaryadevChandra/heart-disease-prediction-classfication)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-
 
 <p align="right">(<a href="#top">back to top</a>)</p>
