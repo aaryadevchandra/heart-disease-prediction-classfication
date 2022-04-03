@@ -12,6 +12,20 @@ const HomePageComponent = () => {
 
     let [resultsbar, setResultsBar] = useState(<></>);
 
+
+    let [loadingDivState, setLoadingDivState] = useState(false)
+
+    const loadingDiv= <Oval
+    ariaLabel="loading-indicator"
+    height={100}
+    width={100}
+    strokeWidth={5}
+    color="red"
+    secondaryColor="yellow"
+  />
+
+
+
   const sendData = async (age, sex, maxhrtrate, chol, fstbloodsugar, angina, chestpain, restecg, oldpeak, mjrvessel, thalas, restbp, slope ) => {
 
     // create a json of our data
@@ -34,6 +48,10 @@ const HomePageComponent = () => {
     const userMedDetailsJSONString = JSON.stringify(userMedDetailsJSON);
     const userMedDetailsJSONStringB64 = btoa(userMedDetailsJSONString);
 
+    // settinng loadingDivState to true while the backend processing is taking place
+
+    setLoadingDivState(true);
+
     await axios.post(`http://127.0.0.1:5000/heartapi/${userMedDetailsJSONStringB64}`).then((response)=>{
         if(response.data === 1){
             console.log('response came 1');
@@ -47,6 +65,8 @@ const HomePageComponent = () => {
         }
     }).catch(err => setResultsBar(resultsbar = <ResultsComponent id='prediction_text_id' prediction_text={'Error connecting to backend...please try again later'} />));
     // document.getElementById( 'prediction_text_id' ).scrollIntoView();
+
+    setLoadingDivState(false);
   }
 
   return (
@@ -251,12 +271,20 @@ const HomePageComponent = () => {
                             Submit
                         </button>
                     </div>
+
+
+                    <div className='row text-center'>
+                        {loadingDivState ? loadingDiv : null}
+                    </div>
                     
                 </div>
+
+
                 
             </div>
         </div>
-
+                        
+                        
 
         {/* results bar component */}
 
