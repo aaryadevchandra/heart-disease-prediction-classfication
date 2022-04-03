@@ -51,7 +51,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -66,8 +65,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Logo](https://imgur.com/UNOxdW7.png)
-
+<p align="center">
+  <img src="https://imgur.com/UNOxdW7.png" />
+</p>
 
 This project is part of our College Semester IV machine learning project. The main machine learning code was written on [Google Colab](https://colab.research.google.com/drive/1splSxv4lArjGC1WXJCuVhGfMKn-HQBZ4?authuser=1#scrollTo=znFNntxszpUw&uniqifier=1). The prediction is based on the [Heart Disease prediction dataset on Kaggle](https://www.kaggle.com/datasets/sumaiyatasmeem/heart-disease-classification-dataset)
 
@@ -87,9 +87,11 @@ Our Web application consisted of a ReactJS frontend with a Flask backend. We tak
 
 
 ## Built With
-
+<p align="center">
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1280px-Node.js_logo.svg.png" width="100" height="60"> <img src="https://cdn.freebiesupply.com/logos/large/2x/flask-logo-png-transparent.png" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" width="100" height="100">
-
+</p>
+  
+  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
@@ -104,9 +106,9 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/AaryadevChandra/heart-disease-prediction-classfication.git
    ```
-2. Install Python packages
+2. Enter the root repository directory and then install the Python packages by running
    ```sh
-   pip install requirements.txt
+   pip install -r requirements.txt
    ```
 3. Enter the `react-app` directory and proceed to install NPM packages
    ```sh
@@ -120,7 +122,7 @@ To get a local copy up and running follow these simple example steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Once you have downloaded the repository and have entered te root directory, you are all set to go!
+Once you have downloaded the repository and have entered the root directory, you are all set to go!
 
 We'll first proceed by running the backend.
 
@@ -147,7 +149,7 @@ We'll first proceed by running the backend.
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE.md` for more information.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
