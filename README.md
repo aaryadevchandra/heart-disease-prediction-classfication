@@ -106,7 +106,7 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    git clone https://github.com/AaryadevChandra/heart-disease-prediction-classfication.git
    ```
-2. Install Python packages
+2. Enter the root repository directory and then install the Python packages by running
    ```sh
    pip install requirements.txt
    ```
