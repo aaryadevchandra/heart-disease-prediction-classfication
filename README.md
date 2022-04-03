@@ -108,7 +108,7 @@ To get a local copy up and running follow these simple example steps.
    ```
 2. Enter the root repository directory and then install the Python packages by running
    ```sh
-   pip install requirements.txt
+   pip install -r requirements.txt
    ```
 3. Enter the `react-app` directory and proceed to install NPM packages
    ```sh
