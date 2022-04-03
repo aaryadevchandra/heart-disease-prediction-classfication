@@ -6,6 +6,7 @@ import axios from 'axios';
 import ResultsComponent from './ResultsBar';
 import { useState } from 'react';
 import logo from '../src/logo.png';
+import {Oval} from "react-loader-spinner";
 
 
 const HomePageComponent = () => {
@@ -15,14 +16,11 @@ const HomePageComponent = () => {
 
     let [loadingDivState, setLoadingDivState] = useState(false)
 
-    const loadingDiv= <Oval
-    ariaLabel="loading-indicator"
-    height={100}
-    width={100}
-    strokeWidth={5}
-    color="red"
-    secondaryColor="yellow"
-  />
+    const loadingDiv=  <div style={{marginLeft: '50%'}}><Oval
+    height={50}
+    width={50}
+    color="#f1356d"
+  /></div>
 
 
 
@@ -270,13 +268,7 @@ const HomePageComponent = () => {
                         }}>
                             Submit
                         </button>
-                    </div>
-
-
-                    <div className='row text-center'>
-                        {loadingDivState ? loadingDiv : null}
-                    </div>
-                    
+                    </div>                    
                 </div>
 
 
@@ -287,8 +279,9 @@ const HomePageComponent = () => {
                         
 
         {/* results bar component */}
+        {loadingDivState ? loadingDiv : null}
 
-        {resultsbar}
+        {loadingDivState? null : resultsbar}
 
 
     </>
